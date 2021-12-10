@@ -1,62 +1,46 @@
-# android-ffmpeg-build-script-ilongge
+FFmpeg README
+=============
 
-#### 介绍
-android-ffmpeg-build-script-ilongge
+FFmpeg is a collection of libraries and tools to process multimedia content
+such as audio, video, subtitles and related metadata.
 
-## 测试环境:
+## Libraries
 
-* FFmpeg 4.3.3
-* NDK-R21C
-* MacOS 11.6.1 (20G221)
+* `libavcodec` provides implementation of a wider range of codecs.
+* `libavformat` implements streaming protocols, container formats and basic I/O access.
+* `libavutil` includes hashers, decompressors and miscellaneous utility functions.
+* `libavfilter` provides a mean to alter decoded Audio and Video through chain of filters.
+* `libavdevice` provides an abstraction to access capture and playback devices.
+* `libswresample` implements audio mixing and resampling routines.
+* `libswscale` implements color conversion and scaling routines.
 
-## 编译依赖
-* yasm 1.2.0
+## Tools
 
+* [ffmpeg](https://ffmpeg.org/ffmpeg.html) is a command line toolbox to
+  manipulate, convert and stream multimedia content.
+* [ffplay](https://ffmpeg.org/ffplay.html) is a minimalistic multimedia player.
+* [ffprobe](https://ffmpeg.org/ffprobe.html) is a simple analysis tool to inspect
+  multimedia content.
+* Additional small tools such as `aviocat`, `ismindex` and `qt-faststart`.
 
-## 使用方法
+## Documentation
 
-下载FFMpeg-4.3.3源码
+The offline documentation is available in the **doc/** directory.
 
-```
-http://www.ffmpeg.org/releases/ffmpeg-4.3.3.tar.bz2
-```
-解压后 将本脚本放到解压后的文件夹内
+The online documentation is available in the main [website](https://ffmpeg.org)
+and in the [wiki](https://trac.ffmpeg.org).
 
+### Examples
 
-配置脚本
+Coding examples are available in the **doc/examples** directory.
 
-```
-# 编译平台
-# "aarch64 arm"
-ARCH=""
-# 目标Android版本
-API="24"
-# 支持的CPU架构
-CPU="armv8-a"
-# so库输出目录
-OUTPUT="../FFMpeg-$CPU-Android"
-# NDK的路径
-NDK=""
-```
+## License
 
+FFmpeg codebase is mainly LGPL-licensed with optional components licensed under
+GPL. Please refer to the LICENSE file for detailed information.
 
-进入到当前目录直接执行脚本即可，如遇无法执行，可能是文件权限问题
+## Contributing
 
-```
-# 进入目录
-cd android-ffmpeg-build-script-ilongge
-cd ffmpeg-4.3.3
-# 赋予脚本可执行权限
-chmod +x buidl-ffmpeg-android.sh
-# 执行脚本
-./buidl-ffmpeg-android.sh  
-
-```
-
-
-## Thanks
-本脚本是摘抄自 [Mac环境下编译ffmpeg生成so库文件-CSDN](https://blog.csdn.net/AliEnCheng/article/details/116699763)
-
-学习后加以改造 
-
-感谢原作者！！！
+Patches should be submitted to the ffmpeg-devel mailing list using
+`git format-patch` or `git send-email`. Github pull requests should be
+avoided because they are not part of our review process and will be ignored.
