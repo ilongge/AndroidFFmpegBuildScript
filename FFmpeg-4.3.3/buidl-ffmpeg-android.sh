@@ -21,17 +21,6 @@ if [ ! -n "$NDK" ]; then
 	exit 1
 fi
 
-if [ ! $(which yasm) ]; then
-	echo 'Yasm not found'
-	if [ ! $(which brew) ]; then
-		echo 'Homebrew not found. Trying to install...'
-		ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" ||
-			exit 1
-	fi
-	echo 'Trying to install Yasm...'
-	brew install yasm || exit 1
-fi
-
 # 编译工具链路径
 TOOLCHAIN="$NDK/toolchains/llvm/prebuilt/darwin-x86_64"
 # 编译环境
