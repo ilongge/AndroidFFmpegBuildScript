@@ -6,10 +6,6 @@ android-ffmpeg-build-script-ilongge
 * NDK-R21C
 * MacOS 11.6.1 (20G221)
 
-## 编译依赖
-* yasm 1.2.0
-
-
 ## 使用方法
  
 配置脚本
@@ -27,7 +23,6 @@ OUTPUT="../FFMpeg-$CPU-Android"
 # NDK的路径
 NDK=""
 ```
-
 
 进入到当前目录直接执行脚本即可，如遇无法执行，可能是文件权限问题
 
